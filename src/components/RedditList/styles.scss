@@ -1,0 +1,25 @@
+.reddit-list {
+    &_posts {
+        margin: 5px;
+    }
+    &_header {
+        margin: 5px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        &-page {
+            margin: 0 5px;
+        }
+
+        &-button {
+            transition: all 0.3s ease-out;
+            
+            &.disabled {
+                pointer-events: none;
+                opacity: 0.7;
+            }
+        }
+    }
+}
