@@ -69,12 +69,14 @@ const RedditList = () => {
                     thumbnail,
                     selftext,
                     id,
+                    url,
                 }) => 
                     <RedditPost
                         key={id}
                         title={title}
                         thumbnail={thumbnail}
                         text={selftext}
+                        url={url}
                     />
                 )
             }

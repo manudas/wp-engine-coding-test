@@ -1,6 +1,6 @@
 import React, {
     useState,
-    useCallback,
+    useMemo,
 } from 'react';
 
 import debounce from 'lodash/debounce';
@@ -17,7 +17,7 @@ const DebouncedInput = ({
 }) => {
     const [ subReddit, setSubReddit ] = useState(defaultReddit);
 
-    const debouncedHandler = useCallback(debounce(
+    const debouncedHandler = useMemo( () => debounce(
         (passedReddit) => {
             // console.log('debounced!');
             onChangeHandler(passedReddit);
@@ -26,7 +26,7 @@ const DebouncedInput = ({
         {
             'leading': false,
             'trailing': true,
-        }), []);
+        }), [onChangeHandler]);
 
     const onInputChangeHandler = ($event) => {
         setSubReddit($event.target.value);

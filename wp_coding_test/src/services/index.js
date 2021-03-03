@@ -4,9 +4,8 @@ const getPostFromPayload = (payload) => {
     const { children: postsList } = payload.data;
 
     return postsList.map(post => {
-        console.log('order by datetime');
         return post.data
-    });
+    }).sort((a, b) => Number(a.created_utc) - Number(b.created_utc));
 };
 
 export const fetchSubredditPosts = async (subreddit) => {

@@ -10,7 +10,7 @@ const RedditPost = ({
     title,
     thumbnail,
     text,
-    text_html,
+    url,
 }) => {
 
     return (
@@ -22,17 +22,35 @@ const RedditPost = ({
             >
                 {title}
             </h2>
-            {
-                isUrl(thumbnail)
-                    ? <img
-                        src={thumbnail}
-                        alt={title}
-                    />
-                    : null
-            }
-            <p>
-                {text}
-            </p>
+            <hr 
+                className="reddit-post_separator"
+            />
+            <div
+                className="reddit-post_content"
+            >
+                {
+                    isUrl(thumbnail)
+                        ? <img
+                            className="reddit-post_img"
+                            src={thumbnail}
+                            alt={title}
+                        />
+                        : null
+                }
+                <p
+                    className="reddit-post_text"
+                >
+                    {text}
+                </p>
+            </div>
+            <a
+                className="reddit-post_link"
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+            >
+                Go to post
+            </a>
         </section>
     )
 };
