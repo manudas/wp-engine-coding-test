@@ -36,9 +36,10 @@ const DebouncedInput = ({
     return (
         <label
             className="debounced-input_label"
-            htmlFor="subReddit">
+            htmlFor="subreddit">
                 Please enter a subreddit
                 <input
+                    data-testid="debouncedInput"
                     className="debounced-input_input"
                     onChange={onInputChangeHandler}
                     id="subreddit"

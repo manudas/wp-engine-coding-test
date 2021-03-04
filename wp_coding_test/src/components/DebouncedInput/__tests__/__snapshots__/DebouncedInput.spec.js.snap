@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DebouncedInput test suite should render <DebouncedInput /> 1`] = `
+<div>
+  <label
+    class="debounced-input_label"
+    for="subreddit"
+  >
+    Please enter a subreddit
+    <input
+      class="debounced-input_input"
+      data-testid="debouncedInput"
+      id="subreddit"
+      value="reactjs"
+    />
+  </label>
+</div>
+`;
