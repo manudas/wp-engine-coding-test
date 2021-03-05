@@ -1,17 +1,11 @@
 export const isUrl = (urlString) => {
-    try {
-        const url = new URL(urlString);
+    var pattern = new RegExp('^((https?:\\/\\/)' + // protocol
+        '|(\\/\\/))?' + // or relative protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
 
-        /*
-         * url is always truthy at this point,
-         * otherwise an exception is thrown. We
-         * use double negation to skip eslinter
-         * complains of having a variable
-         * declared which is not in use
-         */
-        return !!url;
-    } catch (e) {
-        // TypeError
-        return false;
-    }
+    return !!pattern.test(urlString);
 };

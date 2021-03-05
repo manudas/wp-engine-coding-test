@@ -1,4 +1,4 @@
-const endpoint = '//www.reddit.com/r/';
+export const endpoint = '//www.reddit.com/r/';
 
 const getPostFromPayload = (payload) => {
     const { children: postsList } = payload.data;
@@ -10,7 +10,7 @@ const getPostFromPayload = (payload) => {
 
 export const fetchSubredditPosts = async (subreddit) => {
     const url = `${endpoint}${subreddit}.json`;
-    const response = await fetch(url);
+    const response = await fetch(encodeURI(url));
     if (response.ok) {
         const payload = await response.json();
         return getPostFromPayload(payload);
