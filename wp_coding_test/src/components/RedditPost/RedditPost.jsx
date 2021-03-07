@@ -30,6 +30,8 @@ const RedditPost = ({
                 className="reddit-post_content"
             >
                 {
+                    // we don't render an image
+                    // if no thumbnail url has been passed
                     isUrl(thumbnail)
                         ? <img
                             data-testid="postImg"

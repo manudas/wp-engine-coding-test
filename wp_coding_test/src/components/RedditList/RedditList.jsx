@@ -20,9 +20,15 @@ const RedditList = () => {
     const [ posts, setPosts ] = useState([]);
 
     useEffect(() => {
+        // calls API when component mounted for the first time
         onChangeInputHandler(defaultReddit);
     }, []);
 
+    /*
+     * This is the external handler to be passed
+     * down to DebouncedInput, so it can run this
+     * code once passed the configured debounced time
+     */
     const onChangeInputHandler = async (subReddit) => {
         const posts = await fetchSubredditPosts(subReddit);
         setPosts(posts);

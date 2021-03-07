@@ -24,7 +24,7 @@ describe('RedditPost test suite', () => {
         expect(container).toMatchSnapshot();
     });
 
-    it('check if components inside faked post exist', async () => {
+    it('check if different components inside faked post exist', async () => {
         const {
             getByTestId,
             getByText,

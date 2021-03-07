@@ -13,14 +13,15 @@ import {
 
 describe(('Test suite for RedditList component'), () => {
     let renderer;
-    // let spiedFetch;
+
     it('should render an empty List and hit the API', async () => {
         jest.spyOn(services, 'fetchSubredditPosts').mockImplementation(() => []);
 
         renderer = render(<RedditList />);
         const { container } = renderer;
         expect(container).toMatchSnapshot();
-        // wait for effects to have been executed
+
+        // wait for effects to have been run
         await waitFor(() => expect(services.fetchSubredditPosts).toHaveBeenCalledTimes(1));
         expect(services.fetchSubredditPosts).toHaveBeenCalledWith('reactjs');
 
@@ -41,16 +42,15 @@ describe(('Test suite for RedditList component'), () => {
         renderer = render(<RedditList />);
         const { getAllByText } = renderer;
 
-        // wait for effects to have been executed
+        // wait for effects to have been run
         // there's one link redirecting to the
         // post by subredit post drawn on screen
         expect((await waitFor(() => getAllByText(/go to post/i))).length).toBe(10);
-
     });
 
     it('should allow pagination when available', async () => {
         /*
-         * We'll mock global here too
+         * We'll mock global fetch here too
          */
         jest.spyOn(window, 'fetch')
         window.fetch.mockResolvedValueOnce(goodDataResponse);
@@ -61,11 +61,10 @@ describe(('Test suite for RedditList component'), () => {
             getByText,
         } = renderer;
 
-
         const previousButton = getByText(/previous/i);
         const nextButton = getByText(/next/i);
 
-        // wait for effects to have been executed
+        // wait for effects to have been run
         // before checking the state of the buttons
         let goToPostLinks, nextPagePostLinks;
         await waitFor(() => goToPostLinks = nextPagePostLinks = getAllByText(/go to post/i));
@@ -91,8 +90,8 @@ describe(('Test suite for RedditList component'), () => {
         /*
          * In our mocking data set we have
          * 27 posts. Being in the 3th page
-         * we can only have 7 elements on
-         * the screen at this moment
+         * we can only have 7 elements left
+         * on the screen at this moment
          */
         expect(nextPagePostLinks.length).toBe(7);
 

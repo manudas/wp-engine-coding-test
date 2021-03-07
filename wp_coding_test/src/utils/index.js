@@ -1,3 +1,4 @@
+// helper to check if a string is a valid URL
 export const isUrl = (urlString) => {
     var pattern = new RegExp('^((https?:\\/\\/)' + // protocol
         '|(\\/\\/))?' + // or relative protocol
