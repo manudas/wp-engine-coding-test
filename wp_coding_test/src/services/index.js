@@ -9,11 +9,13 @@ const getPostFromPayload = (payload) => {
 };
 
 export const fetchSubredditPosts = async (subreddit) => {
+
     const url = `${endpoint}${subreddit}.json`;
     const response = await fetch(encodeURI(url));
     if (response.ok) {
         const payload = await response.json();
-        return getPostFromPayload(payload);
+        const posts = getPostFromPayload(payload);
+        return posts;
     }
     return [];
 };

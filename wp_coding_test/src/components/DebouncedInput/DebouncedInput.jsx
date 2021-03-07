@@ -30,7 +30,7 @@ const DebouncedInput = ({
 
     const onInputChangeHandler = ($event) => {
         setSubReddit($event.target.value);
-        debouncedHandler($event.target.value); 
+        debouncedHandler($event.target.value);
     };
 
     return (

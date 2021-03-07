@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suite for RedditList component should render an empty List and hit the API 1`] = `
+<div>
+  <header
+    class="reddit-list_header"
+  >
+    <label
+      class="debounced-input_label"
+      for="subreddit"
+    >
+      Please enter a subreddit
+      <input
+        class="debounced-input_input"
+        data-testid="debouncedInput"
+        id="subreddit"
+        value="reactjs"
+      />
+    </label>
+    <div>
+      <button
+        class="reddit-list_header-button disabled"
+      >
+        Previous
+      </button>
+      <span
+        class="reddit-list_header-page"
+      >
+        Page 
+        1
+         out of 
+        1
+      </span>
+      <button
+        class="reddit-list_header-button disabled"
+      >
+        Next
+      </button>
+    </div>
+  </header>
+  <div
+    class="reddit-list_posts"
+  />
+</div>
+`;

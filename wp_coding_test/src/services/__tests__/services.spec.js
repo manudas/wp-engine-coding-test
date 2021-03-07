@@ -1,5 +1,3 @@
-import isEqual from 'lodash/isEqual';
-
 import {
     fetchSubredditPosts,
     endpoint,
@@ -10,7 +8,7 @@ import {
     noDataResponse,
     goodDataResponse,
     decodedGoodData,
-} from '../__data__';
+} from '../../__data__';
 
 describe('Test suite for Services', () => {
 
@@ -73,7 +71,7 @@ describe('Test suite for Services', () => {
 
         expect(data.length).toBe(27);
 
-        expect(isEqual(data, decodedGoodData)).toBe(true);
+        expect(data).toEqual(data, decodedGoodData);
 
         expect(window.fetch).toHaveBeenCalledTimes(1);
     });
