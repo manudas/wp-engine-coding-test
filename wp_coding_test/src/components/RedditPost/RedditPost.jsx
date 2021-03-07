@@ -18,11 +18,12 @@ const RedditPost = ({
             className="reddit-post"
         >
             <h2
+                data-testid="postTitle"
                 className="reddit-post_title"
             >
                 {title}
             </h2>
-            <hr 
+            <hr
                 className="reddit-post_separator"
             />
             <div
@@ -31,6 +32,7 @@ const RedditPost = ({
                 {
                     isUrl(thumbnail)
                         ? <img
+                            data-testid="postImg"
                             className="reddit-post_img"
                             src={thumbnail}
                             alt={title}
@@ -38,6 +40,7 @@ const RedditPost = ({
                         : null
                 }
                 <p
+                    data-testid="postText"
                     className="reddit-post_text"
                 >
                     {text}

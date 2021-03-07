@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RedditPost test suite should render <RedditPost /> 1`] = `
+<div>
+  <section
+    class="reddit-post"
+  >
+    <h2
+      class="reddit-post_title"
+      data-testid="postTitle"
+    >
+      Title of faked post
+    </h2>
+    <hr
+      class="reddit-post_separator"
+    />
+    <div
+      class="reddit-post_content"
+    >
+      <p
+        class="reddit-post_text"
+        data-testid="postText"
+      >
+        Post text
+      </p>
+    </div>
+    <a
+      class="reddit-post_link"
+      href="//www.reddit.com/r/reactjs/comments/lvco7l/whos_hiring_march_2021/"
+      rel="noreferrer"
+      target="_blank"
+    >
+      Go to post
+    </a>
+  </section>
+</div>
+`;

@@ -6,7 +6,7 @@ import {
 import DebouncedInput from '..';
 
 describe('DebouncedInput test suite', () => {
-    
+
     let handler;
     let renderer;
 
@@ -49,11 +49,10 @@ describe('DebouncedInput test suite', () => {
                 }
             );
         }
-        
+
         const longSubredditName = 'UNBGBBIIVCHIDCTIICBG';
         const timeBeetweenKeystrokes = 200; // ms
         for (let index = 0; index < longSubredditName.length; index++) {
-            const char = longSubredditName[index];
 
             /* lets simulate we are typing a long
              * subreddit name with a delay of 220
