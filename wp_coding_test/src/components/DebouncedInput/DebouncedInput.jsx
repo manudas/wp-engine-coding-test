@@ -3,6 +3,8 @@ import React, {
     useMemo,
 } from 'react';
 
+import PropTypes from 'prop-types';
+
 import debounce from 'lodash/debounce';
 
 import {
@@ -26,7 +28,6 @@ const DebouncedInput = ({
      */
     const debouncedHandler = useMemo( () => debounce(
         (passedReddit) => {
-            // console.log('debounced!');
             onChangeHandler(passedReddit);
         },
         debounceTimeout,
@@ -42,19 +43,23 @@ const DebouncedInput = ({
      * as is supposed to be time
      * debounced
      */
-    const onInputChangeHandler = ($event) => {
-        setInputValue($event.target.value);
-        debouncedHandler($event.target.value);
+    const onInputChangeHandler = ({
+        target: {
+            value
+        }
+    }) => {
+        setInputValue(value);
+        debouncedHandler(value);
     };
 
     return (
         <label
-            className="debounced-input_label"
+            className="debounced-input__label"
             htmlFor="subreddit">
                 Please enter a subreddit
                 <input
                     data-testid="debouncedInput"
-                    className="debounced-input_input"
+                    className="debounced-input__input"
                     onChange={onInputChangeHandler}
                     id="subreddit"
                     value={inputValue}
@@ -62,5 +67,13 @@ const DebouncedInput = ({
         </label>
     );
 };
+
+DebouncedInput.propTypes = {
+    onChangeHandler: PropTypes.func,
+}
+
+DebouncedInput.defaultProps = {
+    onChangeHandler: Function.prototype,
+}
 
 export default DebouncedInput;

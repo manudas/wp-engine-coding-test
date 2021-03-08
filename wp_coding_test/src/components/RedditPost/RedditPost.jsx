@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import {
     isUrl,
 } from '../../utils';
@@ -19,15 +21,15 @@ const RedditPost = ({
         >
             <h2
                 data-testid="postTitle"
-                className="reddit-post_title"
+                className="reddit-post__title"
             >
                 {title}
             </h2>
-            <hr
-                className="reddit-post_separator"
+            <div
+                className="reddit-post__separator"
             />
             <div
-                className="reddit-post_content"
+                className="reddit-post__content"
             >
                 {
                     // we don't render an image
@@ -35,7 +37,7 @@ const RedditPost = ({
                     isUrl(thumbnail)
                         ? <img
                             data-testid="postImg"
-                            className="reddit-post_img"
+                            className="reddit-post__img"
                             src={thumbnail}
                             alt={title}
                         />
@@ -43,13 +45,13 @@ const RedditPost = ({
                 }
                 <p
                     data-testid="postText"
-                    className="reddit-post_text"
+                    className="reddit-post__text"
                 >
                     {text}
                 </p>
             </div>
             <a
-                className="reddit-post_link"
+                className="reddit-post__link"
                 href={url}
                 target="_blank"
                 rel="noreferrer"
@@ -59,5 +61,18 @@ const RedditPost = ({
         </section>
     )
 };
+
+RedditPost.propTypes = {
+    title: PropTypes.string,
+    thumbnail: PropTypes.string,
+    text: PropTypes.string,
+    url: PropTypes.string.isRequired,
+}
+
+RedditPost.defaultProps = {
+    title: null,
+    thumbnail: null,
+    text: null,
+}
 
 export default RedditPost;

@@ -6,26 +6,26 @@ exports[`RedditPost test suite should render <RedditPost /> 1`] = `
     class="reddit-post"
   >
     <h2
-      class="reddit-post_title"
+      class="reddit-post__title"
       data-testid="postTitle"
     >
       Title of faked post
     </h2>
-    <hr
-      class="reddit-post_separator"
+    <div
+      class="reddit-post__separator"
     />
     <div
-      class="reddit-post_content"
+      class="reddit-post__content"
     >
       <p
-        class="reddit-post_text"
+        class="reddit-post__text"
         data-testid="postText"
       >
         Post text
       </p>
     </div>
     <a
-      class="reddit-post_link"
+      class="reddit-post__link"
       href="//www.reddit.com/r/reactjs/comments/lvco7l/whos_hiring_march_2021/"
       rel="noreferrer"
       target="_blank"

@@ -7,6 +7,7 @@ import { fetchSubredditPosts } from '../../services';
 
 import RedditPost from '../RedditPost';
 import DebouncedInput from '../DebouncedInput';
+import Paginator from '../Paginator';
 
 import {
     postsPerPage,
@@ -17,7 +18,7 @@ import './styles.scss';
 
 const RedditList = () => {
     const [ page, setPage ] = useState(0);
-    const [ posts, setPosts ] = useState([]);
+    const [ posts, setPosts ] = useState( [] );
 
     useEffect(() => {
         // calls API when component mounted for the first time
@@ -33,42 +34,28 @@ const RedditList = () => {
         const posts = await fetchSubredditPosts(subReddit);
         setPosts(posts);
         setPage(0);
-    }
+    };
 
-    const firstPaginatedElement = (postsPerPage * page);
-    const lastPaginatedElement = (postsPerPage * page) + postsPerPage;
+    const firstPaginatedElement = postsPerPage * page;
+    const lastPaginatedElement = firstPaginatedElement + postsPerPage;
     const maxPage = Math.floor(posts.length / postsPerPage);
 
     return (
         <>
             <header
-                className="reddit-list_header"
+                className="reddit-list__header"
             >
                 <DebouncedInput
                     onChangeHandler={onChangeInputHandler}
                 />
-                <div>
-                    <button
-                        className={`reddit-list_header-button ${page === 0 ? 'disabled' : ''}`}
-                        onClick={() => setPage(page - 1)}
-                    >
-                        Previous
-                    </button>
-                    <span
-                        className="reddit-list_header-page"
-                    >
-                        Page {page + 1} out of {maxPage + 1}
-                    </span>
-                    <button
-                        className={`reddit-list_header-button ${page === maxPage ? 'disabled' : ''}`}
-                        onClick={() => setPage(page + 1)}
-                    >
-                        Next
-                    </button>
-                </div>
+                <Paginator
+                    page={page}
+                    setPage={setPage}
+                    maxPage={maxPage}
+                />
             </header>
             <div
-                className="reddit-list_posts"
+                className="reddit-list__posts"
             >
                 {
                     posts.slice(firstPaginatedElement, lastPaginatedElement).map(({

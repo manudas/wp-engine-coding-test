@@ -3,12 +3,12 @@
 exports[`DebouncedInput test suite should render <DebouncedInput /> 1`] = `
 <div>
   <label
-    class="debounced-input_label"
+    class="debounced-input__label"
     for="subreddit"
   >
     Please enter a subreddit
     <input
-      class="debounced-input_input"
+      class="debounced-input__input"
       data-testid="debouncedInput"
       id="subreddit"
       value="reactjs"

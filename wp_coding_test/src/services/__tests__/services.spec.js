@@ -1,7 +1,10 @@
 import {
     fetchSubredditPosts,
-    endpoint,
 } from '..';
+
+import {
+    endpoint,
+} from '../../components/constants'
 
 import {
     notFoundResponse,
@@ -97,7 +100,7 @@ describe('Test suite for Services', () => {
             // of every post is smaller that next
             // creation time post. So it's order
             // in ascending order
-            expect(data[i].created_utc > previous_post_creation_time).toBeTruthy();
+            expect(data[i].created_utc > previous_post_creation_time).toBe(true);
             previous_post_creation_time = data[i].created_utc;
         }
     });

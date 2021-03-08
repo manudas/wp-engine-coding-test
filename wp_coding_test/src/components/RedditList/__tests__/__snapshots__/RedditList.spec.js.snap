@@ -3,28 +3,28 @@
 exports[`Test suite for RedditList component should render an empty List and hit the API 1`] = `
 <div>
   <header
-    class="reddit-list_header"
+    class="reddit-list__header"
   >
     <label
-      class="debounced-input_label"
+      class="debounced-input__label"
       for="subreddit"
     >
       Please enter a subreddit
       <input
-        class="debounced-input_input"
+        class="debounced-input__input"
         data-testid="debouncedInput"
         id="subreddit"
         value="reactjs"
       />
     </label>
-    <div>
+    <nav>
       <button
-        class="reddit-list_header-button disabled"
+        class="paginator__button disabled"
       >
         Previous
       </button>
       <span
-        class="reddit-list_header-page"
+        class="paginator__page"
       >
         Page 
         1
@@ -32,14 +32,14 @@ exports[`Test suite for RedditList component should render an empty List and hit
         1
       </span>
       <button
-        class="reddit-list_header-button disabled"
+        class="paginator__button disabled"
       >
         Next
       </button>
-    </div>
+    </nav>
   </header>
   <div
-    class="reddit-list_posts"
+    class="reddit-list__posts"
   />
 </div>
 `;

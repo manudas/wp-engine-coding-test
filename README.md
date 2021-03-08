@@ -21,6 +21,9 @@ In order to test your code, provide instructions in your README.md on how to com
 As a prerequisite is important to make sure that ***Node JS and NPM*** packages are installed into your system as global libraries.
 
 In order to build the assets, change your directory to wp_coding_test in a terminal, (__cd wp_conding_test__ in both Windows and Linux). Then run
+> npm install
+
+wait for the dependencies to be installed and then run
 > npm start
 
 A browser should open and let you navigate between the different components in the exercise. In case it didn't, just open one and type ***http://localhost:3000*** into your address bar.

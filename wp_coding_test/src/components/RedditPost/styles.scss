@@ -1,10 +1,11 @@
+@import '../globals';
+
 .reddit-post {
     width: 250px;
 
-    // display: inline-block;
     padding: 15px;
     margin: 10px;
-    border: 1px solid black;
+    border: 1px solid $black;
     border-radius: 5px;
     height: 250px;
     overflow: hidden;
@@ -12,7 +13,7 @@
     display: inline-flex;
     flex-direction: column;
 
-    &_title {
+    &__title {
         font-size: 16px;
 
         overflow: hidden;
@@ -30,40 +31,35 @@
         flex-shrink: 0.25;
     }
 
-    &_content {
-
+    &__content {
         flex-basis: 100%;
         flex-shrink: 0.75;
         flex-grow: 0;
         overflow: hidden;
 
-        // box-shadow: inset 0px -4px 10px 0px rgba(0,0,0,0.75);
-
         background: linear-gradient(
             to bottom,
             transparent 0%,
             transparent 95%,
-            rgba(0,0,0,0.4) 100%
+            $semiTransparentBlack 100%
         );
-    
     }
 
-    &_text {
+    &__text {
         margin-top: 0;
         margin-bottom: 0;
 
         font-size: 14px;
     }
 
-    &_img {
+    &__img {
         float: right;
     }
 
-    &_link {
+    &__link {
         font-size: 12px;
         text-decoration: none;
         transition: all 0.3s ease-out;
-        // width: fit-content;
         display: inline-block;
         margin-right: 0;
         margin-left: auto;
@@ -71,13 +67,13 @@
         &:hover {
             padding: 3px;
             border-radius: 3px;
-            background-color: rgba(0,0,0,0.1);
-            color: rgb(232, 103, 24);
+            background-color: $transparentBlack;
+            color: $orange;
         }
     }
 
-    &_separator{
-        border-top: 1px solid rgba(0,0,0,0.4);
+    &__separator{
+        border-top: 1px solid $semiTransparentBlack;
         width: 100%;
         margin: 5px 0;
     }

@@ -1,0 +1,26 @@
+@import '../globals';
+
+.paginator {
+    &__page {
+        margin: 0 5px;
+    }
+
+    &__button {
+        transition: all 0.3s ease-out;
+
+        border-radius: 3px;
+        border: 1px solid $semiTransparentBlack;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $semiTransparentWhite;
+            color: $darkerOrange;
+            border: 1px solid $grey;
+        }
+
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+    }
+}
