@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suite for <Paginator> should render 1`] = `
+<div>
+  <nav>
+    <button
+      class="paginator__button disabled"
+    >
+      Previous
+    </button>
+    <span
+      class="paginator__page"
+    >
+      Page 
+      1
+       out of 
+      1
+    </span>
+    <button
+      class="paginator__button disabled"
+    >
+      Next
+    </button>
+  </nav>
+</div>
+`;
