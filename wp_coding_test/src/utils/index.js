@@ -1,4 +1,10 @@
-// helper to check if a string is a valid URL
+/**
+ * Helper to check if a string is a valid URL
+ * @param {string} urlString the string to be tested
+ *
+ * @return {boolean} true if the string is a valid URL,
+ * false otherwise
+ */
 export const isUrl = (urlString) => {
     var pattern = new RegExp('^((https?:\\/\\/)' + // protocol
         '|(\\/\\/))?' + // or relative protocol

@@ -36,12 +36,16 @@ const DebouncedInput = ({
             'trailing': true,
         }), [onChangeHandler]);
 
-    /*
+    /**
      * Internal onChange handler.
-     * Will invoke the external
+     * Will invoke the external fn
      * passed down in a given time,
      * as is supposed to be time
      * debounced
+     *
+     * @param {strin} param0 the string
+     * value of the input that has changed
+     *
      */
     const onInputChangeHandler = ({
         target: {
